@@ -1,0 +1,33 @@
+{
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "pnpm install"
+    }
+  ],
+  "tasks": {
+    "dev": {
+      "name": "dev",
+      "command": "pnpm update next@canary && pnpm dev",
+      "runAtStart": false,
+      "restartOn": {
+        "clone": true
+      }
+    },
+    "build-start": {
+      "name": "build and start",
+      "command": "pnpm update next@canary && pnpm run build-start",
+      "runAtStart": true,
+      "restartOn": {
+        "clone": true
+      }
+    },"e2e": {
+      "name": "e2e",
+      "command": "pnpm run e2e",
+      "runAtStart": false,
+      "restartOn": {
+        "clone": true
+      }
+    }
+  }
+}
